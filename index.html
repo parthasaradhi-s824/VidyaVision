@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidyaVision - Experiential Learning & Digital Wellness</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- PWA Manifest Data Line -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlZpZHlhVmlzaW9uIiwKICAic2hvcnRfbmFtZSI6ICJWaWR5YVZpc2lvbiIsCiAgInN0YXJ0X3VybCI6ICIuLyIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzBmMTcyYSIsCiAgInRoZW1lX2NvbG9yIjogIiMwZjE3MmEiCiB9">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f766e 100%);
+        }
+        .card-blur {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-slate-800 bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i data-lucide="book-open-check" class="text-teal-400 w-8 h-8"></i>
+                <span class="text-2xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">VidyaVision</span>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-300">
+                <a href="#simulations" class="hover:text-teal-400 transition">Experiential Modules</a>
+                <a href="#wellness" class="hover:text-teal-400 transition">Focus & Wellness</a>
+                <a href="#analytics" class="hover:text-teal-400 transition">Analytics</a>
+                <a href="#about" class="hover:text-teal-400 transition">About Project</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <!-- App Install Button -->
+                <button id="installAppBtn" onclick="installPWA()" class="hidden bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs px-3 py-2 rounded-lg transition flex items-center gap-1.5 shadow-lg shadow-emerald-500/20">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span>Install App</span>
+                </button>
+
+                <button onclick="toggleLanguage()" id="langBtn" class="bg-slate-800 hover:bg-slate-700 text-xs px-3 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1">
+                    <i data-lucide="globe" class="w-4 h-4"></i>
+                    <span>Malayalam</span>
+                </button>
+                <a href="#wellness" class="bg-teal-500 hover:bg-teal-600 text-slate-950 font-semibold text-xs px-4 py-2 rounded-lg transition">Start Focus Session</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-16 px-4 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <span class="bg-teal-500/10 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full border border-teal-500/20 inline-block">
+                SewaFest 2026 Project Concept
+            </span>
+            <h1 id="heroTitle" class="text-4xl md:text-6xl font-extrabold tracking-tight">
+                Transform Rote Learning into <span class="text-teal-400">Interactive Mastery</span>
+            </h1>
+            <p id="heroDesc" class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                A unified platform integrating hands-on subject simulations with proactive digital academic wellness to keep your study sessions productive and distraction-free.
+            </p>
+            <div class="flex justify-center gap-4 pt-4">
+                <a href="#simulations" class="bg-teal-500 hover:bg-teal-600 text-slate-950 font-semibold px-6 py-3 rounded-xl transition flex items-center gap-2">
+                    <i data-lucide="play" class="w-5 h-5"></i>
+                    <span>Explore Simulations</span>
+                </a>
+                <a href="#wellness" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-xl border border-slate-700 transition flex items-center gap-2">
+                    <i data-lucide="timer" class="w-5 h-5"></i>
+                    <span>Focus Timer</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Experiential Learning Simulations -->
+    <section id="simulations" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+            <div>
+                <h2 id="simTitle" class="text-3xl font-bold">Interactive Concept Simulations</h2>
+                <p class="text-slate-400 text-sm mt-1">Learn core concepts visually through hands-on controls instead of passive reading.</p>
+            </div>
+            <div class="flex gap-2">
+                <button class="bg-teal-500 text-slate-950 px-3 py-1 text-xs rounded-md font-semibold">Physics</button>
+                <button class="bg-slate-800 text-slate-400 px-3 py-1 text-xs rounded-md">Maths</button>
+                <button class="bg-slate-800 text-slate-400 px-3 py-1 text-xs rounded-md">Chemistry</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Simulation Card 1 -->
+            <div class="card-blur rounded-2xl p-6 hover:border-teal-500/50 transition">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-3 bg-teal-500/10 rounded-xl text-teal-400">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Class 8-10</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Simple Electric Circuit</h3>
+                <p class="text-slate-400 text-xs mb-6 leading-relaxed">Adjust Voltage and Resistance interactively to see real-time current changes and bulb brightness.</p>
+                
+                <!-- Interactive Mini Controller -->
+                <div class="bg-slate-950/60 p-4 rounded-xl space-y-3 mb-4">
+                    <div class="flex justify-between text-xs">
+                        <span>Voltage (V): <strong id="vVal" class="text-teal-400">5V</strong></span>
+                    </div>
+                    <input type="range" id="vSlider" min="1" max="12" value="5" class="w-full accent-teal-400" oninput="updateCircuit()">
+                    <div class="flex justify-between text-xs">
+                        <span>Current (I): <strong id="iVal" class="text-yellow-400">0.5 A</strong></span>
+                    </div>
+                </div>
+
+                <button class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-xs font-semibold rounded-lg transition flex justify-center items-center gap-1">
+                    <span>Launch Full Simulation</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Simulation Card 2 -->
+            <div class="card-blur rounded-2xl p-6 hover:border-teal-500/50 transition">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400">
+                        <i data-lucide="orbit" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Class 9-12</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Gravity & Orbital Motion</h3>
+                <p class="text-slate-400 text-xs mb-6 leading-relaxed">Simulate satellite orbits around planets by modifying initial velocity and gravitational force constants.</p>
+                <div class="bg-slate-950/60 p-4 rounded-xl flex items-center justify-center h-28 border border-dashed border-slate-800 text-slate-500 text-xs">
+                    [ Interactive Gravity Canvas Demo ]
+                </div>
+                <button class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-xs font-semibold rounded-lg transition mt-4 flex justify-center items-center gap-1">
+                    <span>Launch Full Simulation</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Simulation Card 3 -->
+            <div class="card-blur rounded-2xl p-6 hover:border-teal-500/50 transition">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-3 bg-purple-500/10 rounded-xl text-purple-400">
+                        <i data-lucide="flask-conical" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Class 8-10</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Acid-Base pH Indicator</h3>
+                <p class="text-slate-400 text-xs mb-6 leading-relaxed">Mix neutral solutions with acids or bases to visually observe color transitions on the pH scale.</p>
+                <div class="bg-slate-950/60 p-4 rounded-xl flex items-center justify-center h-28 border border-dashed border-slate-800 text-slate-500 text-xs">
+                    [ Interactive pH Scale Visualizer ]
+                </div>
+                <button class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-xs font-semibold rounded-lg transition mt-4 flex justify-center items-center gap-1">
+                    <span>Launch Full Simulation</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Digital Academic Wellness & Focus Timer -->
+    <section id="wellness" class="bg-slate-950 py-16 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="space-y-6">
+                <span class="bg-blue-500/10 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full border border-blue-500/20">
+                    Proactive Digital Wellness
+                </span>
+                <h2 class="text-3xl font-bold">Distraction-Free Focus Engine</h2>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    VidyaVision keeps your mind clear by structuring study sessions into optimal focus intervals while providing gentle break prompts to reduce digital fatigue.
+                </p>
+                <ul class="space-y-3 text-xs text-slate-400">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="text-teal-400 w-4 h-4"></i>
+                        <span>Customizable Pomodoro Intervals (25m Focus / 5m Break)</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="text-teal-400 w-4 h-4"></i>
+                        <span>Screen Eye-Rest Reminders & Healthy Break Activities</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="text-teal-400 w-4 h-4"></i>
+                        <span>Zero Social Media Notifications during study mode</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Focus Timer Widget -->
+            <div class="card-blur p-8 rounded-3xl max-w-md mx-auto w-full text-center border border-slate-800">
+                <div class="flex justify-center gap-2 mb-6">
+                    <button id="focusModeBtn" onclick="setTimerMode('focus')" class="bg-teal-500 text-slate-950 font-bold px-4 py-1.5 rounded-lg text-xs">Study Focus</button>
+                    <button id="breakModeBtn" onclick="setTimerMode('break')" class="bg-slate-800 text-slate-400 px-4 py-1.5 rounded-lg text-xs">Eye Rest Break</button>
+                </div>
+
+                <div class="my-6">
+                    <span id="timerDisplay" class="text-6xl font-mono font-extrabold text-teal-400">25:00</span>
+                    <p id="timerStatus" class="text-xs text-slate-400 mt-2">Ready to start session</p>
+                </div>
+
+                <div class="flex justify-center gap-4">
+                    <button onclick="startTimer()" class="bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold px-6 py-2.5 rounded-xl text-sm flex items-center gap-2">
+                        <i data-lucide="play" class="w-4 h-4"></i>
+                        <span>Start</span>
+                    </button>
+                    <button onclick="pauseTimer()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-6 py-2.5 rounded-xl text-sm border border-slate-700 flex items-center gap-2">
+                        <i data-lucide="pause" class="w-4 h-4"></i>
+                        <span>Pause</span>
+                    </button>
+                    <button onclick="resetTimer()" class="bg-slate-800 hover:bg-slate-700 text-slate-400 p-2.5 rounded-xl border border-slate-700">
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 3: Comprehension Analytics -->
+    <section id="analytics" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold">Comprehension & Habit Analytics</h2>
+            <p class="text-slate-400 text-sm mt-2">Track real conceptual understanding and self-regulated study habits, not just time spent online.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card-blur p-6 rounded-2xl border border-slate-800">
+                <p class="text-slate-400 text-xs">Active Focus Time Today</p>
+                <h3 class="text-3xl font-extrabold text-teal-400 my-2">1h 45m</h3>
+                <p class="text-xs text-teal-300/80">+15% from yesterday's goal</p>
+            </div>
+            <div class="card-blur p-6 rounded-2xl border border-slate-800">
+                <p class="text-slate-400 text-xs">Interactive Simulations Mastered</p>
+                <h3 class="text-3xl font-extrabold text-blue-400 my-2">4 Modules</h3>
+                <p class="text-xs text-blue-300/80">Physics & Maths concepts</p>
+            </div>
+            <div class="card-blur p-6 rounded-2xl border border-slate-800">
+                <p class="text-slate-400 text-xs">Wellness Index</p>
+                <h3 class="text-3xl font-extrabold text-emerald-400 my-2">92%</h3>
+                <p class="text-xs text-emerald-300/80">Balanced breaks & eye safety</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about" class="bg-slate-950 border-t border-slate-800 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+            <div class="flex justify-center items-center gap-2">
+                <i data-lucide="book-open-check" class="text-teal-400 w-6 h-6"></i>
+                <span class="text-xl font-bold text-slate-200">VidyaVision</span>
+            </div>
+            <p class="text-xs text-slate-500 max-w-md mx-auto">
+                Built for SewaFest 2026 under the theme "Shikshit & Kaushal Bharat". Open-source MVP designed for ₹0 cost deployment using GitHub and Render.
+            </p>
+            <p class="text-xs text-slate-600">© 2026 VidyaVision. Progressive Web Application (PWA).</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Engine -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // PWA Installation Prompt Logic
+        let deferredPrompt;
+        const installBtn = document.getElementById('installAppBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.classList.remove('hidden');
+        });
+
+        async function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    installBtn.classList.add('hidden');
+                }
+                deferredPrompt = null;
+            }
+        }
+
+        // Circuit Simulation Script
+        function updateCircuit() {
+            const v = document.getElementById('vSlider').value;
+            const r = 10;
+            const i = (v / r).toFixed(2);
+            document.getElementById('vVal').innerText = v + 'V';
+            document.getElementById('iVal').innerText = i + ' A';
+        }
+
+        // Focus Timer Logic
+        let timer;
+        let timeLeft = 25 * 60;
+        let isRunning = false;
+        let currentMode = 'focus';
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timerDisplay').innerText = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (isRunning) return;
+            isRunning = true;
+            document.getElementById('timerStatus').innerText = "Session Active - Keep Learning!";
+            timer = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    updateDisplay();
+                } else {
+                    clearInterval(timer);
+                    isRunning = false;
+                    alert(currentMode === 'focus' ? "Focus session complete! Time for a short break." : "Break complete! Ready to study?");
+                }
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            clearInterval(timer);
+            isRunning = false;
+            document.getElementById('timerStatus').innerText = "Session Paused";
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            isRunning = false;
+            timeLeft = (currentMode === 'focus' ? 25 : 5) * 60;
+            updateDisplay();
+            document.getElementById('timerStatus').innerText = "Ready to start session";
+        }
+
+        function setTimerMode(mode) {
+            currentMode = mode;
+            if (mode === 'focus') {
+                document.getElementById('focusModeBtn').className = "bg-teal-500 text-slate-950 font-bold px-4 py-1.5 rounded-lg text-xs";
+                document.getElementById('breakModeBtn').className = "bg-slate-800 text-slate-400 px-4 py-1.5 rounded-lg text-xs";
+                timeLeft = 25 * 60;
+            } else {
+                document.getElementById('breakModeBtn').className = "bg-teal-500 text-slate-950 font-bold px-4 py-1.5 rounded-lg text-xs";
+                document.getElementById('focusModeBtn').className = "bg-slate-800 text-slate-400 px-4 py-1.5 rounded-lg text-xs";
+                timeLeft = 5 * 60;
+            }
+            resetTimer();
+        }
+
+        // Language Switcher Toggle
+        let currentLang = 'en';
+        function toggleLanguage() {
+            if (currentLang === 'en') {
+                document.getElementById('heroTitle').innerHTML = 'പഠനം കാണാതെ പഠിക്കലല്ല, <span class="text-teal-400">അനുഭവിച്ചറിയാം</span>';
+                document.getElementById('heroDesc').innerText = 'പാഠഭാഗങ്ങളുടെ ഇന്ററാക്ടീവ് സിമുലേഷനുകളും ഡിജിറ്റൽ വെൽനസ് ടൂളുകളും ഒന്നിച്ച് നൽകുന്ന ഏകീകൃത ലേണിംഗ് പ്ലാറ്റ്‌ഫോം.';
+                document.getElementById('simTitle').innerText = 'ഇന്ററാക്ടീവ് ലേണിംഗ് സിമുലേഷനുകൾ';
+                document.getElementById('langBtn').querySelector('span').innerText = 'English';
+                currentLang = 'ml';
+            } else {
+                document.getElementById('heroTitle').innerHTML = 'Transform Rote Learning into <span class="text-teal-400">Interactive Mastery</span>';
+                document.getElementById('heroDesc').innerText = 'A unified platform integrating hands-on subject simulations with proactive digital academic wellness to keep your study sessions productive and distraction-free.';
+                document.getElementById('simTitle').innerText = 'Interactive Concept Simulations';
+                document.getElementById('langBtn').querySelector('span').innerText = 'Malayalam';
+                currentLang = 'en';
+            }
+        }
+    </script>
+</body>
+</html>
